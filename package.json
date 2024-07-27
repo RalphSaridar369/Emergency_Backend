@@ -11,5 +11,8 @@
   "dependencies": {
     "express": "^4.19.2",
     "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.12"
   }
 }
