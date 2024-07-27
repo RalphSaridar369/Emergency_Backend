@@ -1,15 +1,15 @@
 {
-  "name": "app",
-  "version": "0.0.0",
-  "private": true,
+  "name": "e_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "ts-node index.ts"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "express": "^4.19.2",
+    "ts-node": "^10.9.2"
   }
 }
