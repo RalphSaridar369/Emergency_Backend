@@ -1,17 +1,30 @@
 {
   "name": "e_backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "this is the backend project",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.ts",
-    "start": "ts-node index.ts"
+    "start": "ts-node index.ts",
+    "typeorm": "typeorm-ts-node-esm",
+    "migration:run": "npm run build && npx typeorm migration:run -d dist/data-source.js",
+    "build": "rmdir /s /q dist && tsc --outDir dist",
+    "build:linux": "rm -rf dist && tsc --outDir dist"
   },
-  "author": "",
+  "config": {
+    "migrationName": "defaultName"
+  },
+  "author": "Ralph X Ali",
   "license": "ISC",
   "dependencies": {
+    "awilix": "^10.0.2",
+    "awilix-express": "^9.0.1",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "ts-node": "^10.9.2"
+    "nodemon": "^3.1.4",
+    "pg": "^8.12.0",
+    "ts-node": "^10.9.2",
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@types/node": "^20.14.12"

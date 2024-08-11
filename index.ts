@@ -1,6 +1,6 @@
 const express = require("express");
 
-import authRouter from "./routers/auth";
+import authRouter from "./src/routers/auth";
 
 const app = express();
 const port = process.env.PORT || 8080;

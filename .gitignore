@@ -7,6 +7,9 @@ node_modules/
 .env.test.local
 .env.production.local
 
+# Dist
+dist
+
 # Production env file
 .env
 
