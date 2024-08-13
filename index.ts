@@ -1,12 +1,17 @@
 const express = require("express");
+const container = require("./container");
 
-import authRouter from "./src/routers/auth";
+import { scopePerRequest } from "awilix-express";
+import userRouter from "./src/routers/user";
+import volunteerRouter from "./src/routers/volunteer";
 
 const app = express();
 const port = process.env.PORT || 8080;
+app.use(express.json());
+app.use(scopePerRequest(container));
 
 //adding routers
-app.use("/api", [authRouter]);
+app.use("/api", [userRouter, volunteerRouter]);
 app.get("/", (req: any, res: any) => {
   res.send("Hello World this is the first app");
 });
