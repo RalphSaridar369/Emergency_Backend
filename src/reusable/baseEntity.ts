@@ -1,7 +1,8 @@
-import { Column, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, Column, PrimaryColumn } from "typeorm";
+import { v4 as uuidv4 } from "uuid";
 
 export class BaseEntity {
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryColumn({ type: "varchar", length: 36 })
   id: string;
 
   @Column()
@@ -9,4 +10,9 @@ export class BaseEntity {
 
   @Column()
   updated_at: Date;
+
+  @BeforeInsert()
+  private setId(): void {
+    this.id = uuidv4();
+  }
 }

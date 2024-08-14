@@ -1,4 +1,4 @@
-import { Entity, Column, ManyToOne, JoinColumn, BeforeInsert } from "typeorm";
+import { Entity, Column, BeforeInsert } from "typeorm";
 import { BaseEntity } from "../reusable/baseEntity";
 import { addPrefix } from "../utils/generateUUID";
 
@@ -8,13 +8,14 @@ export class User extends BaseEntity {
   email: string;
 
   @Column()
-  number: string;
+  phone_number: string;
 
   @Column()
   password: string;
 
   @BeforeInsert()
   private beforeInsert(): void {
+    console.log(this.id);
     this.id = addPrefix(this.id, "user_");
   }
 }
