@@ -15,7 +15,6 @@ export class User extends BaseEntity {
 
   @BeforeInsert()
   private beforeInsert(): void {
-    console.log(this.id);
     this.id = addPrefix(this.id, "user_");
   }
 }
