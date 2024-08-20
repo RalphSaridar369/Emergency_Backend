@@ -7,9 +7,9 @@
     "dev": "nodemon index.ts",
     "start": "ts-node index.ts",
     "typeorm": "typeorm-ts-node-esm",
-    "migration:run": "npm run build && npx typeorm migration:run -d dist/data-source.js",
-    "build": "rmdir /s /q dist && tsc --outDir dist",
-    "build:linux": "rm -rf dist && tsc --outDir dist"
+    "migration:run": "npm run build:windows && npx typeorm migration:run -d dist/data-source.js",
+    "build:windows": "rmdir /s /q dist && tsc --outDir dist",
+    "build": "rm -rf dist && tsc --outDir dist"
   },
   "config": {
     "migrationName": "defaultName"
